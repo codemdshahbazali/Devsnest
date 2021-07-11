@@ -1,6 +1,6 @@
 body {
   background-color: #ebd4cb;
-  padding: 0%;
+  padding: 0;
   margin: 0;
 }
 
@@ -33,6 +33,7 @@ header {
   font-weight: 500;
   display: flex;
   justify-content: center;
+  /* width: 30%; */
 }
 
 .content {
@@ -40,10 +41,17 @@ header {
   background-color: #c24a2cc7;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .box {
-  width: 290px;
+  width: 14vw;
   height: 150px;
   background-color: #793322c7;
   margin: 5px;
