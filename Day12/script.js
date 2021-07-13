@@ -6,17 +6,27 @@ addElementButton.addEventListener('click', (e) => {
   let divElement = document.createElement('div');
   divElement.classList.add('todo_item');
 
+  let divElementSec1 = document.createElement('div');
+  divElementSec1.classList.add('todo_item_section1');
+
+  let divElementSec2 = document.createElement('div');
+  divElementSec1.classList.add('todo_item_section2');
+
   const inputElement = document.createElement('input');
   inputElement.setAttribute('type', 'checkbox');
   const spanElement = document.createElement('span');
+  spanElement.classList.add('todoContent');
   spanElement.innerText = text;
+  divElementSec1.appendChild(inputElement);
+  divElementSec1.appendChild(spanElement);
+
   const buttonElement = document.createElement('button');
   buttonElement.classList.add('deleteButton');
   buttonElement.innerText = 'Delete';
+  divElementSec2.appendChild(buttonElement);
 
-  divElement.appendChild(inputElement);
-  divElement.appendChild(spanElement);
-  divElement.appendChild(buttonElement);
+  divElement.appendChild(divElementSec1);
+  divElement.appendChild(divElementSec2);
 
   document.getElementById('todos__list').appendChild(divElement);
 
@@ -36,7 +46,7 @@ const todosList = document.getElementById('todos__list');
 updateTodo();
 todosList.addEventListener('click', (e) => {
   if (e.target.matches('.deleteButton')) {
-    e.target.parentElement.remove();
+    e.target.closest('.todo_item').remove();
     updateTodo();
   }
 

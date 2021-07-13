@@ -47,14 +47,27 @@ body {
   min-height: 300px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   border-bottom: 1px solid rgba(197, 185, 185, 0.199);
   font-size: 20px;
+  margin-left: 10px;
+  margin-right: 5px;
 }
 
 .todo_item {
   margin-top: 10px;
   margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.todo_item_section1 {
+  width: 60%;
+  margin-left: 20px;
+}
+
+.todoContent {
+  word-wrap: break-word;
 }
 
 .deleteButton {
@@ -94,6 +107,7 @@ input {
   padding: 10px;
   border-radius: 20px;
   margin-right: 10px;
+  outline: none;
 }
 
 .checked {
