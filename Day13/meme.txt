@@ -1,0 +1,9 @@
+THA Day 13
+
+Create a Website Using any API.
+Following are some api suggestion
+Github API - https://docs.github.com/en/rest
+Quote API - https://api.quotable.io/random
+Meme API - https://meme-api.herokuapp.com/gimme
+
+inspiration - https://codepen.io/zg_dev/pen/gOLboGj
