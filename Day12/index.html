@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="todos__container">
+      <header class="todos__header">
+        <div id="todos__completed">
+          <span>Todos Completed: </span>
+          <span id="completed"></span>
+        </div>
+        <div id="todos__remaining">
+          <span>Todos Remaining: </span>
+          <span id="remaining"></span>
+        </div>
+      </header>
+      <main>
+        <section id="todos__list">
+          <div class="todo_item">
+            <input type="checkbox" />
+            <span>This is an example todos</span>
+            <button type="submit" class="deleteButton">Delete</button>
+          </div>
+          <div class="todo_item">
+            <input type="checkbox" />
+            <span>This is an example todos</span>
+            <button type="submit" class="deleteButton">Delete</button>
+          </div>
+          <div class="todo_item">
+            <input type="checkbox" />
+            <span>This is an example todos</span>
+            <button type="submit" class="deleteButton">Delete</button>
+          </div>
+          <div class="todo_item">
+            <input type="checkbox" />
+            <span>This is an example todos</span>
+            <button type="submit" class="deleteButton">Delete</button>
+          </div>
+          <div class="todo_item">
+            <input type="checkbox" />
+            <span>This is an example todos</span>
+            <button type="submit" class="deleteButton">Delete</button>
+          </div>
+        </section>
+        <section id="todos__add">
+          <input
+            type="text"
+            name="addTodos"
+            id="addTodos"
+            placeholder="Add Todo"
+          />
+          <button type="submit" id="todos__add__button">Add</button>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

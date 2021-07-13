@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fc5c7d; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #6a82fb,
+    #fc5c7d
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #6a82fb,
+    #fc5c7d
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.todos__container {
+  width: 40%;
+  background-color: white;
+  border-radius: 20px;
+  min-height: 400px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.todos__header {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  font-size: 25px;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(197, 185, 185, 0.199);
+}
+
+#todos__completed {
+  margin-right: 4%;
+}
+
+#todos__list {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid rgba(197, 185, 185, 0.199);
+  font-size: 20px;
+}
+
+.todo_item {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.deleteButton {
+  margin-left: 100px;
+}
+
+.deleteButton:hover {
+  background-color: red;
+  color: white;
+}
+
+#todos__add {
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#addTodos {
+  width: 350px;
+}
+
+button {
+  width: 90px;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(89, 170, 73);
+  color: white;
+}
+
+input {
+  padding: 10px;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.checked {
+  text-decoration: line-through;
+}
