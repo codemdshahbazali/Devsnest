@@ -1,0 +1,59 @@
+[
+  {
+    "questionId": 1,
+    "questionStatement": "Inside which HTML element do we put the JavaScript?",
+    "options": ["A: <js>", "B: <script>", "C: <scripting>", "D: <javascript>"],
+    "answer": "B:"
+  },
+  {
+    "questionId": 2,
+    "questionStatement": "Where is the correct place to insert a JavaScript?",
+    "options": [
+      "A: The <body> section",
+      "B: The <head> section",
+      "C: Both the <head> section and the <body> section are correct",
+      "D: None of the above"
+    ],
+    "answer": "C:"
+  },
+  {
+    "questionId": 3,
+    "questionStatement": "Which of the following is not a valid JavaScript variable name?",
+    "options": [
+      "A: 2names",
+      "B: _first_and_last_names",
+      "C: FirstAndLast",
+      "D: None of the above"
+    ],
+    "answer": "A:"
+  },
+  {
+    "questionId": 4,
+    "questionStatement": "What does the <noscript> tag do?",
+    "options": [
+      "A: Enclose text to be displayed by non-JavaScript browsers.",
+      "B: Prevents scripts on the page from executing.",
+      "C: Describes certain low-budget movies.",
+      "D: None of the above"
+    ],
+    "answer": "A:"
+  },
+  {
+    "questionId": 5,
+    "questionStatement": "JavaScript is interpreted by _________",
+    "options": ["A: Client", "B: Server", "C: Object", "D: None of the above"],
+    "answer": "A:"
+  },
+  {
+    "questionId": 6,
+    "questionStatement": "The _______ method of an Array object adds and/or removes elements from an array.",
+    "options": ["A: Reverse", "B: Shift", "C: Slice", "D: Splice"],
+    "answer": "D:"
+  },
+  {
+    "questionId": 7,
+    "questionStatement": "Which of the following is not JavaScript Data Types?",
+    "options": ["A: Undefined", "B: Number", "C: Boolean", "D: Float"],
+    "answer": "D:"
+  }
+]
