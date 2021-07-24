@@ -1,24 +1,62 @@
 body {
-	display: flex;
-	/* justify-content: space-between; */
-	align-items: center;
-	flex-wrap: wrap;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .first {
-	width: 100px;
-	height: 100px;
-	background-color: aquamarine;
-	margin-left: 20px;
-	margin-top: 20px;
-	cursor: pointer;
+  width: 100px;
+  height: 100px;
+  background-color: aquamarine;
+  margin-left: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  border: 1px solid black;
 }
 
 .second {
-	width: 100px;
-	height: 100px;
-	background-color: rgb(146, 42, 160);
-	margin-left: 20px;
-	margin-top: 20px;
-	cursor: pointer;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(146, 42, 160);
+  margin-left: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+#error {
+  overflow: scroll;
+}
+
+.fill {
+  background-image: url('http://source.unsplash.com/random/100x100');
+  position: relative;
+  height: 100px;
+  width: 100px;
+  top: 5px;
+  left: 5px;
+}
+
+.empty {
+  display: inline-block;
+  height: 110px;
+  width: 110px;
+  border: 1px solid black;
+  margin-left: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.hold {
+  border: solid #ccc 4px;
+}
+
+.hovered {
+  background-color: #4f4f4f;
+  border-style: dashed;
+}
+
+.invisible {
+  display: none;
 }

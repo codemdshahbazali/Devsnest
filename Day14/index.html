@@ -1,44 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-</head>
-<body>
-   <div class="first" onclick="handleClick(event)">On Click</div>
-   <input class="input" onblur="handleBlur(event)" onfocus="handleFocus(event)" placeholder="Blur/Focus"/>
-   <div class="first dbClick" ondblclick="handleDBClick(event)">Double Click</div>
-   <div>
-       <input class="onChange" type="text" onchange="handleOnchange(event)" placeholder="onChange"/>
-        <input  oninput="handleOninput(event)" placeholder="onInput"/> <br>
-        <span id="text"></span>
+  </head>
+  <body>
+    <div class="first" onclick="handleClick(event)">On Click</div>
+    <input
+      class="input"
+      onblur="handleBlur(event)"
+      onfocus="handleFocus(event)"
+      placeholder="Blur/Focus"
+    />
+    <div class="first dbClick" ondblclick="handleDBClick(event)">
+      Double Click
     </div>
-   <div class="second"></div>
-   <div class="first"></div>
-   <div class="second"></div>
-   <div class="first"></div>
-   <div class="second"></div>
-   <div class="first"></div>
-   <div class="second"></div>
-   <div class="first"></div>
-   <div class="second"></div>
-   <div class="first"></div>
-   <div class="second"></div>
-   <div class="first"></div>
-   <div class="second"></div>
-   <div class="first"></div>
-   <div class="second"></div>
-   <div class="first"></div>
-   <div class="second"></div>
-   <div class="first"></div>
-   <div class="second"></div>
-   <div class="first"></div>
-   <div class="second"></div>
-   <div class="first"></div>
-   <div class="second"></div>
-</body>
+    <div>
+      <input
+        class="onChange"
+        type="text"
+        onchange="handleOnchange(event)"
+        placeholder="onChange"
+      />
+      <input oninput="handleOninput(event)" placeholder="onInput" /> <br />
+      <span id="text"></span>
+    </div>
+    <div
+      class="second"
+      id="contextMenu"
+      oncontextmenu="handleContextMenu(event)"
+    >
+      On Context Menu
+    </div>
+    <div class="first" id="error" onclick="handleErrorClick(event)">
+      On Error - can be attached to a element or window object. Catches global
+      error not caught by try catch
+    </div>
+    <div class="second" style="width: fit-content">
+      <div>OnSubmit</div>
+      <form action="#" onsubmit="handleForm(event)">
+        <input type="text" name="form-change" id="form-change" /> <br />
+        <span id="formChange"></span>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="first empty">
+      <div class="fill" draggable="true"></div>
+    </div>
+    <div class="second empty"></div>
+    <div class="first empty"></div>
+    <div class="second empty"></div>
+    <div class="first empty"></div>
+    <div class="second" style="width: fit-content">
+      <span>Keyboard Events</span>
+      <input type="text" name="keyEvents" id="keyEvents" /> <br />
+      <span id="keyText"></span>
+    </div>
+    <div class="first" onmousedown="handleMouseEvents(event)">MouseDown</div>
+    <div class="second" onmouseup="handleMouseEvents(event)">Mouse Up</div>
+    <div class="first" onmousemove="handleMouseEvents(event)">Mouse Move</div>
+    <div
+      class="second"
+      onmouseenter="handleMouseEvents(event)"
+      onmouseout="handleMouseEvents(event)"
+    >
+      Mouse Out/Enter
+    </div>
+    <div class="second" onmouseover="handleMouseEvents(event)">Mouse Over</div>
+  </body>
 </html>
