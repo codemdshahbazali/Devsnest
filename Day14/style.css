@@ -1,0 +1,24 @@
+body {
+	display: flex;
+	/* justify-content: space-between; */
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.first {
+	width: 100px;
+	height: 100px;
+	background-color: aquamarine;
+	margin-left: 20px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+.second {
+	width: 100px;
+	height: 100px;
+	background-color: rgb(146, 42, 160);
+	margin-left: 20px;
+	margin-top: 20px;
+	cursor: pointer;
+}
