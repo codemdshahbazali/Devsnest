@@ -2,6 +2,7 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Card from './components/Day16/Card';
 import Chessboard from './components/Day16/Chessboard';
+import HealthCardList from './components/Day17/HealthCardList';
 import Header from './components/Header';
 import Welcome from './components/Welcome';
 
@@ -23,7 +24,7 @@ function App() {
         </Route>
         <Route path='/Day17'>
           <Header />
-          <div>Day 17 THA goes here</div>
+          <HealthCardList />
         </Route>
         <Route path='/Day18'>
           <Header />
