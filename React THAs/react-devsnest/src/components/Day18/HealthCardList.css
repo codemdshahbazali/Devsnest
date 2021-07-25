@@ -44,12 +44,12 @@
   background-color: #d62929;
 }
 
-.health-card {
+.health-card-enhanced {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   padding: 20px;
   margin: 20px;
   color: aliceblue;
-  background-color: rgb(102, 155, 24);
+  background-color: #31434d;
   border-radius: 10px;
   width: 90%;
 }

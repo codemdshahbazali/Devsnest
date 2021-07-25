@@ -19,7 +19,10 @@ function Header() {
           <Link to='/Day17'>Day 17 - 1</Link>
         </li>
         <li>
-          <Link to='/Day18'>Day 18 - 1</Link>
+          <Link to='/Day18-Chessboard'>Day 18 - 1</Link>
+        </li>
+        <li>
+          <Link to='/Day18-HealthCard'>Day 18 - 2</Link>
         </li>
         <li>
           <Link to='/Day19'>Day 19 - 1</Link>

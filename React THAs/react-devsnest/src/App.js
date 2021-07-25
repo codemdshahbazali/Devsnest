@@ -3,6 +3,8 @@ import './App.css';
 import Card from './components/Day16/Card';
 import Chessboard from './components/Day16/Chessboard';
 import HealthCardList from './components/Day17/HealthCardList';
+import ChessboardEnhanced from './components/Day18/ChessboardEnhanced';
+import HealthCardListEnhanced from './components/Day18/HealthCardListEnhanced';
 import Header from './components/Header';
 import Welcome from './components/Welcome';
 
@@ -26,9 +28,13 @@ function App() {
           <Header />
           <HealthCardList />
         </Route>
-        <Route path='/Day18'>
+        <Route path='/Day18-Chessboard'>
           <Header />
-          <div>Day 18 THA goes here</div>
+          <ChessboardEnhanced />
+        </Route>
+        <Route path='/Day18-HealthCard'>
+          <Header />
+          <HealthCardListEnhanced />
         </Route>
         <Route path='/Day19'>
           <Header />
