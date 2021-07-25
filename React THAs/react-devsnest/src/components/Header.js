@@ -1,0 +1,32 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Header.css';
+
+function Header() {
+  return (
+    <div className='header-container'>
+      <ul className='list'>
+        <li>
+          <Link to='/Day16-Cards'>Day 16 - 1</Link>
+        </li>
+        <li>
+          <Link to='/Day16-Chessboard'>Day 16 - 2</Link>
+        </li>
+        <li>
+          <Link to='/Day17'>Day 17 - 1</Link>
+        </li>
+        <li>
+          <Link to='/Day18'>Day 18 - 1</Link>
+        </li>
+        <li>
+          <Link to='/Day19'>Day 19 - 1</Link>
+        </li>
+        <li>
+          <Link to='/Day20'>Day 20 - 1</Link>
+        </li>
+      </ul>
+    </div>
+  );
+}
+
+export default Header;

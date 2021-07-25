@@ -1,0 +1,27 @@
+.list {
+  display: flex;
+  list-style: none;
+  padding: 10px 0;
+  justify-content: center;
+  /* background-color: rgb(98, 98, 202); */
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.list li {
+  margin-right: 10px;
+  padding: 15px;
+  /* border: 1px solid blue; */
+  background-color: #9c85d2;
+  border-radius: 5px;
+}
+
+.list li:hover {
+  background-color: #fd7e14;
+}
+
+.list li a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+}

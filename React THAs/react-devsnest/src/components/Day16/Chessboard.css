@@ -1,0 +1,32 @@
+.chess-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+.chess-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  /* height: 300px; */
+  border: 10px solid black;
+}
+
+.box {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+}
+
+.row:nth-child(odd) .box:nth-child(odd) {
+  background-color: black;
+}
+
+.row:nth-child(even) .box:nth-child(odd) {
+  background-color: white;
+}
+
+.row:nth-child(even) .box:nth-child(even) {
+  background-color: black;
+}
