@@ -5,7 +5,7 @@ function HealthCard(props) {
   return (
     <div className='health-card'>
       <h1>{title}</h1>
-      <p>{`you have consumed ${calorie} cals today`}</p>
+      <p>{`You have consumed ${calorie} cals today.`}</p>
     </div>
   );
 }
