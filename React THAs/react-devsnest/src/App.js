@@ -3,6 +3,7 @@ import './App.css';
 import Card from './components/Day16/Card';
 import Chessboard from './components/Day16/Chessboard';
 import Header from './components/Header';
+import Welcome from './components/Welcome';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <Switch>
         <Route exact path='/'>
           <Header />
-          <h1>THA Details</h1>
+          <Welcome />
         </Route>
         <Route path='/Day16-Cards'>
           <Header />

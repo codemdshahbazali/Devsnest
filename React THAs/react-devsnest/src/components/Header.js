@@ -7,6 +7,9 @@ function Header() {
     <div className='header-container'>
       <ul className='list'>
         <li>
+          <Link to='/'>Home</Link>
+        </li>
+        <li>
           <Link to='/Day16-Cards'>Day 16 - 1</Link>
         </li>
         <li>
