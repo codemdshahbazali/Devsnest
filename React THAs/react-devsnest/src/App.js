@@ -5,7 +5,9 @@ import Chessboard from './components/Day16/Chessboard';
 import HealthCardList from './components/Day17/HealthCardList';
 import ChessboardEnhanced from './components/Day18/ChessboardEnhanced';
 import HealthCardListEnhanced from './components/Day18/HealthCardListEnhanced';
+import CounterList from './components/Day19/CounterList';
 import HealthCardListWIthDelete from './components/Day20/HealthCardListWIthDelete';
+import HealthTodoList from './components/Day21/HealthTodoList';
 import Header from './components/Header';
 import Welcome from './components/Welcome';
 
@@ -39,7 +41,8 @@ function App() {
         </Route>
         <Route path='/Day19'>
           <Header />
-          <div>Day 19 THA goes here</div>
+          {/* <div>Day 19 THA goes here</div> */}
+          <CounterList />
         </Route>
         <Route path='/Day20'>
           <Header />
@@ -47,7 +50,7 @@ function App() {
         </Route>
         <Route path='/Day21'>
           <Header />
-          <div>Day 21 THA goes here</div>
+          <HealthTodoList />
         </Route>
       </Switch>
     </div>

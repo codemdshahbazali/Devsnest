@@ -1,0 +1,64 @@
+.health-todos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.health-todos-container input {
+  padding: 5px 5px;
+  margin-right: 15px;
+  font-size: 15px;
+}
+
+.health-todos-container button {
+  padding: 10px 10px;
+  margin-right: 15px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.health-todos-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-input {
+  margin-bottom: 10px;
+}
+
+.item-list-container {
+  margin-top: 30px;
+}
+
+.health-item {
+  margin-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  padding: 15px 150px 15px 15px;
+}
+
+.health-item span {
+  display: inline-block;
+  font-weight: 600;
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.health-item p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}

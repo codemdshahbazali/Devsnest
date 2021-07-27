@@ -1,0 +1,13 @@
+.counter-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.counter-list button {
+  padding: 20px;
+  margin: 5px;
+  width: 100px;
+  cursor: pointer;
+}
