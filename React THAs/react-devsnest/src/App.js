@@ -5,6 +5,7 @@ import Chessboard from './components/Day16/Chessboard';
 import HealthCardList from './components/Day17/HealthCardList';
 import ChessboardEnhanced from './components/Day18/ChessboardEnhanced';
 import HealthCardListEnhanced from './components/Day18/HealthCardListEnhanced';
+import HealthCardListWIthDelete from './components/Day20/HealthCardListWIthDelete';
 import Header from './components/Header';
 import Welcome from './components/Welcome';
 
@@ -42,7 +43,11 @@ function App() {
         </Route>
         <Route path='/Day20'>
           <Header />
-          <div>Day 20 THA goes here</div>
+          <HealthCardListWIthDelete />
+        </Route>
+        <Route path='/Day21'>
+          <Header />
+          <div>Day 21 THA goes here</div>
         </Route>
       </Switch>
     </div>
