@@ -8,6 +8,7 @@ import HealthCardListEnhanced from './components/Day18/HealthCardListEnhanced';
 import CounterList from './components/Day19/CounterList';
 import HealthCardListWIthDelete from './components/Day20/HealthCardListWIthDelete';
 import HealthTodoList from './components/Day21/HealthTodoList';
+import MemeList from './components/Day22/MemeList';
 import Header from './components/Header';
 import Welcome from './components/Welcome';
 
@@ -41,7 +42,6 @@ function App() {
         </Route>
         <Route path='/Day19'>
           <Header />
-          {/* <div>Day 19 THA goes here</div> */}
           <CounterList />
         </Route>
         <Route path='/Day20'>
@@ -51,6 +51,18 @@ function App() {
         <Route path='/Day21'>
           <Header />
           <HealthTodoList />
+        </Route>
+        <Route path='/Day22'>
+          <Header />
+          <MemeList />
+        </Route>
+        <Route path='/Day23'>
+          <Header />
+          <div>Day 23 THA goes here</div>
+        </Route>
+        <Route path='/Day24'>
+          <Header />
+          <div>Day 24 THA goes here</div>
         </Route>
       </Switch>
     </div>
