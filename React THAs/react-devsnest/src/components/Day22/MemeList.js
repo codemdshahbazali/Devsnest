@@ -28,13 +28,14 @@ function MemeList() {
   return (
     <div className='meme-container-list'>
       {!meme ? (
-        memeDataList.map((memeObj) => (
+        memeDataList.map((memeObj, index) => (
           <div
+            key={index}
             className='meme-element'
             onClick={() => {
               setMeme(memeObj);
             }}>
-            <Meme memeObj={memeObj} />
+            <Meme memeObj={memeObj} key={index} />
           </div>
         ))
       ) : (
