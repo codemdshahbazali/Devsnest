@@ -10,6 +10,7 @@ import HealthCardListWIthDelete from './components/Day20/HealthCardListWIthDelet
 import HealthTodoList from './components/Day21/HealthTodoList';
 import MemeList from './components/Day22/MemeList';
 import DocTitle from './components/Day23/DocTitle';
+import ReactRouter from './components/Day24/ReactRouter';
 import Header from './components/Header';
 import Welcome from './components/Welcome';
 
@@ -63,7 +64,11 @@ function App() {
         </Route>
         <Route path='/Day24'>
           <Header />
-          <div>Day 24 THA goes here</div>
+          <ReactRouter />
+        </Route>
+        <Route path='/Day26'>
+          <Header />
+          <div>Day 26 THA goes here</div>
         </Route>
       </Switch>
     </div>
