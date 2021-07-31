@@ -10,7 +10,10 @@ function Content() {
   return (
     <div className='content-container'>
       <Switch>
-        <Route exact path='/Day24/home'>
+        <Route exact path='/Day24'>
+          <Home login={login} setlogin={setlogin} />
+        </Route>
+        <Route path='/Day24/home'>
           <Home login={login} setlogin={setlogin} />
         </Route>
         <Route path='/Day24/about'>

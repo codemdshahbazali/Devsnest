@@ -5,7 +5,7 @@ import './ReactRouter.css';
 
 function ReactRouter() {
   return (
-    <div>
+    <div className='router-container'>
       <HeaderRouter />
       <Content />
     </div>
