@@ -9,6 +9,7 @@ import CounterList from './components/Day19/CounterList';
 import HealthCardListWIthDelete from './components/Day20/HealthCardListWIthDelete';
 import HealthTodoList from './components/Day21/HealthTodoList';
 import MemeList from './components/Day22/MemeList';
+import DocTitle from './components/Day23/DocTitle';
 import Header from './components/Header';
 import Welcome from './components/Welcome';
 
@@ -58,7 +59,7 @@ function App() {
         </Route>
         <Route path='/Day23'>
           <Header />
-          <div>Day 23 THA goes here</div>
+          <DocTitle />
         </Route>
         <Route path='/Day24'>
           <Header />

@@ -26,22 +26,27 @@ function MemeList() {
   }, []);
 
   return (
-    <div className='meme-container-list'>
-      {!meme ? (
-        memeDataList.map((memeObj, index) => (
-          <div
-            key={index}
-            className='meme-element'
-            onClick={() => {
-              setMeme(memeObj);
-            }}>
-            <Meme memeObj={memeObj} key={index} />
-          </div>
-        ))
-      ) : (
-        <IndividualMeme meme={meme} setMeme={setMeme} />
-      )}
-    </div>
+    <>
+      <h1 style={{ textAlign: 'center', marginTop: '10px' }}>
+        Meme Generator Templates
+      </h1>
+      <div className='meme-container-list'>
+        {!meme ? (
+          memeDataList.map((memeObj, index) => (
+            <div
+              key={index}
+              className='meme-element'
+              onClick={() => {
+                setMeme(memeObj);
+              }}>
+              <Meme memeObj={memeObj} key={index} />
+            </div>
+          ))
+        ) : (
+          <IndividualMeme meme={meme} setMeme={setMeme} />
+        )}
+      </div>
+    </>
   );
 }
 

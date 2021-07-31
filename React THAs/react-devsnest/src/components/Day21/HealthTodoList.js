@@ -9,11 +9,11 @@ function HealthTodoList() {
   const [calorie, setcalorie] = useState('');
 
   const updateTodo = (newTodo) => {
-    todos.map((todo) =>
-      todo.id === newTodo.id
-        ? { ...todo, item: newTodo.item, calorie: newTodo.calorie }
-        : todo
-    );
+    settodos(current => current.map((todo) =>
+        todo.id === newTodo.id
+          ? { ...todo, item: newTodo.item, calorie: newTodo.calorie }
+          : todo
+      ))
   };
 
   const deleteItem = (todoId) => {
@@ -53,7 +53,7 @@ function HealthTodoList() {
             // console.log(item, calorie);
             let todo = {
               id: uuidv4(),
-              item,
+              item, 
               calorie,
             };
             // console.log(todo);
@@ -74,7 +74,7 @@ function HealthTodoList() {
             return (
               <HealthTodo
                 todo={todo}
-                key={index}
+                key={todo.id}
                 updateTodo={updateTodo}
                 deleteItem={deleteItem}
               />

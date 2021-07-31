@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 function HealthTodo(props) {
   const { todo, updateTodo, deleteItem } = props;
@@ -7,11 +7,6 @@ function HealthTodo(props) {
   const [edit, setedit] = useState(false);
   const [updatedItem, setupdatedItem] = useState(todo.item);
   const [updatedCalorie, setupdatedCalorie] = useState(todo.calorie);
-
-  useEffect(() => {
-    setupdatedItem(todo.item);
-    setupdatedCalorie(todo.calorie);
-  }, [todo]);
 
   return (
     <div className='health-item'>
