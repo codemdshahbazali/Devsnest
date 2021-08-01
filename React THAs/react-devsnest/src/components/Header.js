@@ -45,6 +45,12 @@ function Header() {
         <li>
           <Link to='/Day26'>Day 26 - 1</Link>
         </li>
+        <li>
+          <Link to='/Day27'>Day 27 - 1</Link>
+        </li>
+        <li>
+          <Link to='/Extras/Redux'>Redux</Link>
+        </li>
       </ul>
     </div>
   );

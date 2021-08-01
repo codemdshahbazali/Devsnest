@@ -1,0 +1,31 @@
+.react-redux-app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.redux-user-input-feilds input {
+  padding: 10px 5px;
+  display: block;
+  margin-top: 10px;
+}
+
+.redux-user-input-feilds input:focus {
+  outline: none;
+}
+
+.data-display-container {
+  margin-top: 60px;
+  font-size: 20px;
+}
+
+.data-display-label {
+  font-weight: 600;
+  /*    * Compared to display: inline, the major difference is that display: inline-block allows to set a width and height on the element.
+        * Also, with display: inline-block, the top and bottom margins/paddings are respected, but with display: inline they are not.
+        * Compared to display: block, the major difference is that display: inline-block does not add a line-break after the element, so the element can sit next to other elements. 
+    */
+  display: inline-block;
+  width: 120px;
+}

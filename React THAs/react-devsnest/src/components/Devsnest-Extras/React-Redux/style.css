@@ -1,0 +1,22 @@
+.redux-counter-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.redux-counter-container button {
+  padding: 10px 20px;
+  font-size: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.counter-value {
+  font-size: 25px;
+  margin: 10px 0;
+}
+
+.componentA-container {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
