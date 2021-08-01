@@ -1,0 +1,54 @@
+.redux-todos-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.redux-todos-container button {
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 15px;
+  border: none;
+}
+
+#todo-input {
+  margin-right: 10px;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 15px;
+}
+
+#todo-input:focus {
+  outline: none;
+}
+
+.redux-todoslist-container {
+  margin-top: 30px;
+  width: 40%;
+}
+
+.redux-todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  padding: 10px;
+  margin-top: 15px;
+}
+
+.redux-todo .todo-content {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+#completed-checkbox {
+  margin-right: 20px;
+}
+
+.redux-todo-title {
+  text-decoration: line-through;
+}

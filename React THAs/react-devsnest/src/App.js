@@ -12,6 +12,7 @@ import MemeList from './components/Day22/MemeList';
 import DocTitle from './components/Day23/DocTitle';
 import ReactRouter from './components/Day24/ReactRouter';
 import UserInputApp from './components/Day26/UserInputApp';
+import Todos from './components/Day27/Todos';
 import MainComponent from './components/Devsnest-Extras/React-Redux/MainComponent';
 import Header from './components/Header';
 import Welcome from './components/Welcome';
@@ -74,7 +75,7 @@ function App() {
         </Route>
         <Route path='/Day27'>
           <Header />
-          <div>Day 27 THA goes here</div>
+          <Todos />
         </Route>
         <Route path='/Extras/Redux'>
           <Header />
