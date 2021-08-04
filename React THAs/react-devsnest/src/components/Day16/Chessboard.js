@@ -15,14 +15,14 @@ function Chessboard() {
   return (
     <div className='chess-container'>
       <div className='chess-box'>
-        <div className='row'>{generateRow()}</div>
-        <div className='row'>{generateRow()}</div>
-        <div className='row'>{generateRow()}</div>
-        <div className='row'>{generateRow()}</div>
-        <div className='row'>{generateRow()}</div>
-        <div className='row'>{generateRow()}</div>
-        <div className='row'>{generateRow()}</div>
-        <div className='row'>{generateRow()}</div>
+        <div className='chess-box-row'>{generateRow()}</div>
+        <div className='chess-box-row'>{generateRow()}</div>
+        <div className='chess-box-row'>{generateRow()}</div>
+        <div className='chess-box-row'>{generateRow()}</div>
+        <div className='chess-box-row'>{generateRow()}</div>
+        <div className='chess-box-row'>{generateRow()}</div>
+        <div className='chess-box-row'>{generateRow()}</div>
+        <div className='chess-box-row'>{generateRow()}</div>
       </div>
     </div>
   );

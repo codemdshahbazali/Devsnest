@@ -19,14 +19,14 @@
   height: 35px;
 }
 
-.row:nth-child(odd) .box:nth-child(odd) {
+.chess-box-row:nth-child(odd) .box:nth-child(odd) {
   background-color: black;
 }
 
-.row:nth-child(even) .box:nth-child(odd) {
+.chess-box-row:nth-child(even) .box:nth-child(odd) {
   background-color: white;
 }
 
-.row:nth-child(even) .box:nth-child(even) {
+.chess-box-row:nth-child(even) .box:nth-child(even) {
   background-color: black;
 }
