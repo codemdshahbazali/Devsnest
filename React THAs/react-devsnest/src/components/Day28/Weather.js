@@ -18,7 +18,11 @@ function Weather() {
         setLoading={setLoading}
       />
       {weatherData ? (
-        <WeatherResult weatherData={weatherData} place={location} />
+        <WeatherResult
+          weatherData={weatherData}
+          place={location}
+          loading={loading}
+        />
       ) : (
         <div className='card'>Please Enter a correct Location</div>
       )}
