@@ -11,13 +11,23 @@ function WeatherRedux() {
   console.log(theme);
 
   return (
-    <div className={theme ? 'theme-main-container-dark' : null}>
+    <div
+      className={
+        theme
+          ? 'theme-main-container-dark d-flex flex-column'
+          : 'd-flex flex-column'
+      }
+      style={{ height: '100vh' }}>
       <button
-        className={theme ? 'btn btn-light mt-2' : 'btn btn-dark mt-2'}
+        className={
+          theme
+            ? 'btn btn-light mt-3 me-3 align-self-end'
+            : 'btn btn-dark mt-3 me-3 align-self-end'
+        }
         onClick={() => {
           dispatch(changeTheme());
         }}>
-        Change Theme
+        {theme ? 'Switch To Light Theme' : 'Switch To Dark Theme'}
       </button>
       <div
         className='d-flex flex-column align-items-center mt-1'
@@ -31,7 +41,7 @@ function WeatherRedux() {
         ) : (
           <div
             className={
-              theme ? 'card  bg-light text-dark' : 'card  bg-dark text-white'
+              theme ? 'card  bg-dark text-white' : 'card  bg-light text-dark'
             }>
             Please Enter a correct Location
           </div>

@@ -13,8 +13,8 @@ function WeatherResult() {
       <div
         className={
           theme
-            ? 'card  bg-light text-dark align-items-center'
-            : 'card align-items-center bg-dark text-white'
+            ? 'card align-items-center bg-dark text-white'
+            : 'card align-items-center bg-light text-dark '
         }
         style={{ width: '25rem' }}>
         {loading ? (
@@ -30,7 +30,7 @@ function WeatherResult() {
               className='card-img-top temp-img'
               alt='...'
             />
-            <span className='h1 text-center temp-value'>{temp_c}°</span>
+            <span className='h1 text-center temp-value'>{temp_c}°C</span>
             <div className='text-center temp-info'>{condition?.text}</div>
             <div className='text-center temp-city'>{place}</div>
             <div className='container mt-3'>
