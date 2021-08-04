@@ -14,6 +14,7 @@ import ReactRouter from './components/Day24/ReactRouter';
 import UserInputApp from './components/Day26/UserInputApp';
 import Todos from './components/Day27/Todos';
 import Weather from './components/Day28/Weather';
+import WeatherMain from './components/Day29/WeatherMain';
 import WeatherRedux from './components/Day29/WeatherRedux';
 import MainComponent from './components/Devsnest-Extras/React-Redux/MainComponent';
 import Header from './components/Header';
@@ -85,7 +86,7 @@ function App() {
         </Route>
         <Route path='/Day29'>
           <Header />
-          <WeatherRedux />
+          <WeatherMain />
         </Route>
         <Route path='/Extras/Redux'>
           <Header />

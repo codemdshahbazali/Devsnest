@@ -1,41 +1,62 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 function WeatherResult() {
+  const { weatherData, place, loading } = useSelector(
+    (state) => state.weatherData
+  );
+  const theme = useSelector((state) => state.theme);
+  console.log('Theme from Result', theme);
+  const { condition, temp_c, humidity, wind_kph, precip_in } = weatherData;
   return (
     <div className='d-flex justify-content-center'>
-      <div className='card align-items-center' style={{ width: '25rem' }}>
-        <img
-          src='https://cdn.weatherapi.com/weather/64x64/night/389.png'
-          className='card-img-top temp-img'
-          alt='...'
-        />
-        <span className='h1 text-center temp-value'>28.3°</span>
-        <div className='text-center temp-info'>
-          Moderate or heavy rain with thunder
-        </div>
-        <div className='text-center temp-city'>Texas</div>
-        <div class='container mt-3'>
-          <div class='row text-center'>
-            <div class='col'>
-              <div>Wind Now</div>
-              <div className='temp-val'>
-                6.8 <span className='temp-unit'>KM</span>
-              </div>
-            </div>
-            <div class='col'>
-              <div>Humidity</div>
-              <div className='temp-val'>
-                79 <span className='temp-unit'>%</span>
-              </div>
-            </div>
-            <div class='col'>
-              <div>Percipitation</div>
-              <div className='temp-val'>
-                0.15 <span className='temp-unit'>%</span>
-              </div>
+      <div
+        className={
+          theme
+            ? 'card  bg-light text-dark align-items-center'
+            : 'card align-items-center bg-dark text-white'
+        }
+        style={{ width: '25rem' }}>
+        {loading ? (
+          <div className='d-flex justify-content-center'>
+            <div className='spinner-border' role='status'>
+              <span className='visually-hidden'>Loading...</span>
             </div>
           </div>
-        </div>
+        ) : (
+          <>
+            <img
+              src={condition?.icon}
+              className='card-img-top temp-img'
+              alt='...'
+            />
+            <span className='h1 text-center temp-value'>{temp_c}°</span>
+            <div className='text-center temp-info'>{condition?.text}</div>
+            <div className='text-center temp-city'>{place}</div>
+            <div className='container mt-3'>
+              <div className='row text-center'>
+                <div className='col'>
+                  <div>Wind Now</div>
+                  <div className='temp-val'>
+                    {wind_kph} <span className='temp-unit'>KM</span>
+                  </div>
+                </div>
+                <div className='col'>
+                  <div>Humidity</div>
+                  <div className='temp-val'>
+                    {humidity} <span className='temp-unit'>%</span>
+                  </div>
+                </div>
+                <div className='col'>
+                  <div>Percipitation</div>
+                  <div className='temp-val'>
+                    {precip_in} <span className='temp-unit'>%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
