@@ -1,3 +1,12 @@
+.temp-search {
+  border-radius: 10px;
+  border: 1px solid rgb(160, 153, 153);
+}
+
+.temp-search:focus {
+  outline: none;
+}
+
 .temp-img {
   width: 50% !important;
 }

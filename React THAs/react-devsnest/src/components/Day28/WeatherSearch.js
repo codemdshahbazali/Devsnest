@@ -20,12 +20,12 @@ function WeatherSearch({ setWeatherData, setlocation, setLoading }) {
 
   return (
     <div>
-      <div className='d-flex p-2 justify-content-center mb-5'>
+      <div className='d-flex p-2 justify-content-center align-items-center mb-5'>
         <input
-          className='me-3 p-1'
+          className='p-2 me-2 temp-search'
           type='search'
           placeholder='Enter a loaction'
-          aria-label='Search'
+          aria-label='Enter a loaction'
           value={place}
           onChange={(e) => {
             console.log(e.target.value);
