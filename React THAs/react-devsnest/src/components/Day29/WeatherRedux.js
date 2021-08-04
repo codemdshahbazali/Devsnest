@@ -5,7 +5,9 @@ import WeatherSearch from './WeatherSearch';
 
 function WeatherRedux() {
   return (
-    <div className='d-flex flex-column align-items-center mt-3'>
+    <div
+      className='d-flex flex-column align-items-center mt-1'
+      style={{ marginBottom: '50px' }}>
       <div className='h1 fs-2 mb-5'>
         Weather App Using Redux and Redux Thunk
       </div>
