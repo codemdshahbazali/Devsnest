@@ -13,6 +13,8 @@ import DocTitle from './components/Day23/DocTitle';
 import ReactRouter from './components/Day24/ReactRouter';
 import UserInputApp from './components/Day26/UserInputApp';
 import Todos from './components/Day27/Todos';
+import Weather from './components/Day28/Weather';
+import WeatherRedux from './components/Day29/WeatherRedux';
 import MainComponent from './components/Devsnest-Extras/React-Redux/MainComponent';
 import Header from './components/Header';
 import Welcome from './components/Welcome';
@@ -76,6 +78,14 @@ function App() {
         <Route path='/Day27'>
           <Header />
           <Todos />
+        </Route>
+        <Route path='/Day28'>
+          <Header />
+          <Weather />
+        </Route>
+        <Route path='/Day29'>
+          <Header />
+          <WeatherRedux />
         </Route>
         <Route path='/Extras/Redux'>
           <Header />

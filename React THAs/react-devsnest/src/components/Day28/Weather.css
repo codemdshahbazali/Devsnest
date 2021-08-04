@@ -1,0 +1,32 @@
+.temp-img {
+  width: 50% !important;
+}
+
+.temp-value {
+  font-size: 4.375rem !important;
+}
+
+.temp-info {
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.temp-city {
+  font-size: 1.3rem;
+  font-weight: 500;
+  opacity: 0.8;
+  margin: 0.625rem 0;
+}
+
+.temp-val {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.temp-unit {
+  font-size: 0.8rem;
+}
+
+.col {
+  font-size: 0.875rem;
+}

@@ -24,14 +24,18 @@ function AddTodos() {
         type='submit'
         className='todo-button'
         onClick={() => {
-          dispatch(
-            addTodo({
-              id: uuidv4(),
-              title: todoValue,
-              completed: false,
-            })
-          );
-          setTodoValue('');
+          if (todoValue) {
+            dispatch(
+              addTodo({
+                id: uuidv4(),
+                title: todoValue,
+                completed: false,
+              })
+            );
+            setTodoValue('');
+          } else {
+            alert('Todo feild cant be blank');
+          }
         }}>
         Add Todo
       </button>

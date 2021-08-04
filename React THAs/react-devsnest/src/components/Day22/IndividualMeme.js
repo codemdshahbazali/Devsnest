@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
+import { css } from '@emotion/react';
+import CircleLoader from 'react-spinners/CircleLoader';
 
 function IndividualMeme(props) {
   const { url, box_count, id } = props.meme;
 
   const [memeData, setmemeData] = useState([]);
   const [urlEndpoint, stateurlEndpoint] = useState(url);
+  const [loading, setloading] = useState(false);
+  const override = css`
+    display: block;
+    margin: 26% auto;
+    border-color: red;
+  `;
 
   const captionImage = async () => {
+    setloading(true);
     let parameter = '';
     memeData.forEach((element, index) => {
       parameter += `&boxes[${index}][text]=${element}`;
@@ -23,9 +32,20 @@ function IndividualMeme(props) {
 
   return (
     <div className='individual-meme-container'>
-      <div
-        className='img-container'
-        style={{ backgroundImage: `url(${urlEndpoint})` }}></div>
+      {loading ? (
+        <div className='img-container'>
+          <CircleLoader
+            color={'grey'}
+            loading={loading}
+            css={override}
+            size={200}
+          />
+        </div>
+      ) : (
+        <div
+          className='img-container'
+          style={{ backgroundImage: `url(${urlEndpoint})` }}></div>
+      )}
       <div className='individual-box-container'>
         {[...Array(box_count)].map((_, index) => {
           return (
@@ -51,6 +71,7 @@ function IndividualMeme(props) {
               ? captionImage().then((imgData) => {
                   console.log(imgData.data.url);
                   stateurlEndpoint(imgData.data.url);
+                  setloading(false);
                 })
               : alert('Please fill at least one of the input');
           }}>
