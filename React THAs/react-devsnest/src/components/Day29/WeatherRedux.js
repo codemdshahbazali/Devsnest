@@ -3,8 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import WeatherResult from './WeatherResult';
 import WeatherSearch from './WeatherSearch';
 import { changeTheme } from './actions';
+import { ImSwitch } from 'react-icons/im';
+import { useState } from 'react';
 
 function WeatherRedux() {
+  const [iconColor, setIconColor] = useState('black');
   const { weatherData } = useSelector((state) => state.weatherData);
   const dispatch = useDispatch(changeTheme());
   const theme = useSelector((state) => state.theme);
@@ -18,7 +21,7 @@ function WeatherRedux() {
           : 'd-flex flex-column'
       }
       style={{ height: '100vh' }}>
-      <button
+      {/* <button
         className={
           theme
             ? 'btn btn-light mt-3 me-3 align-self-end'
@@ -28,7 +31,21 @@ function WeatherRedux() {
           dispatch(changeTheme());
         }}>
         {theme ? 'Switch To Light Theme' : 'Switch To Dark Theme'}
-      </button>
+      </button> */}
+      <ImSwitch
+        className='mt-3 me-3 align-self-end'
+        color={iconColor}
+        size='3rem'
+        style={{ cursor: 'pointer' }}
+        onClick={() => {
+          if (iconColor === 'black') {
+            setIconColor('white');
+          } else {
+            setIconColor('black');
+          }
+          dispatch(changeTheme());
+        }}
+      />
       <div
         className='d-flex flex-column align-items-center mt-1'
         style={{ marginBottom: '50px' }}>
