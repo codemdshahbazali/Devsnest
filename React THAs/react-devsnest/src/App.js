@@ -15,8 +15,8 @@ import UserInputApp from './components/Day26/UserInputApp';
 import Todos from './components/Day27/Todos';
 import Weather from './components/Day28/Weather';
 import WeatherMain from './components/Day29/WeatherMain';
-import WeatherRedux from './components/Day29/WeatherRedux';
 import Ecommerce from './components/Day30/Ecommerce';
+import EcommerceNew from './components/Day31/components/EcommerceNew';
 import MainComponent from './components/Devsnest-Extras/React-Redux/MainComponent';
 import Header from './components/Header';
 import Welcome from './components/Welcome';
@@ -92,6 +92,10 @@ function App() {
         <Route path='/Day30'>
           <Header />
           <Ecommerce />
+        </Route>
+        <Route path='/Day31'>
+          <Header />
+          <EcommerceNew />
         </Route>
         <Route path='/Extras/Redux'>
           <Header />
