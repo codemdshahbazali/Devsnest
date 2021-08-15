@@ -42,13 +42,17 @@ const TodoList = () => {
         <button
           type='submit'
           onClick={() => {
-            const newTodo = {
-              id: uuidv4().toString(),
-              item: todo, // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
-              done: false,
-            };
-            setTodos([...todos, newTodo]);
-            setTodo('');
+            if (todo) {
+              const newTodo = {
+                id: uuidv4().toString(),
+                item: todo, // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
+                done: false,
+              };
+              setTodos([...todos, newTodo]);
+              setTodo('');
+            } else {
+              alert('Please enter a todo before adding');
+            }
           }}>
           Add Todo
         </button>
