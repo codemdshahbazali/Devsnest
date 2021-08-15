@@ -94,7 +94,7 @@ function App() {
           <Ecommerce />
         </Route>
         <Route path='/Day31'>
-          <Header />
+          {/* <Header /> */}
           <EcommerceNew />
         </Route>
         <Route path='/Extras/Redux'>

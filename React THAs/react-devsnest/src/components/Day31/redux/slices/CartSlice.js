@@ -21,6 +21,7 @@ const cartSlice = createSlice({
         });
       }
     },
+
     removeFromCart: (state, action) => {
       console.log(action.payload);
       return state.filter((data) => {
@@ -28,6 +29,7 @@ const cartSlice = createSlice({
         return data.id !== action.payload;
       });
     },
+
     updateCart: (state, action) => {
       return state.map((data) => {
         if (data.id === action.payload.id) {

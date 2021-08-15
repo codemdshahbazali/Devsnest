@@ -20,7 +20,13 @@ function CartItem({ data }) {
         <div className='col-1'></div>
         <div className='col-6 product-cart-info'>
           <p className='product-cart-info-title'>{data.title}</p>
-          <p className='product-cart-info-desc'>{data.description}</p>
+          <p
+            className='product-cart-info-desc'
+            data-toggle='tooltip'
+            data-placement='left'
+            title={data.description}>
+            {data.description}
+          </p>
           <p className='product-cart-info-price'>
             <span>Price: ₹ </span>
             {data.price}

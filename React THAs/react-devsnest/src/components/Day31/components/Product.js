@@ -13,7 +13,13 @@ function Product({ data }) {
         <img src={data.image} alt={data.title} />
       </div>
       <div className='product-card-info'>
-        <p className='product-card-info-title'>{data.title}</p>
+        <p
+          className='product-card-info-title'
+          data-toggle='tooltip'
+          data-placement='bottom'
+          title={data.title}>
+          {data.title}
+        </p>
         <p className='product-card-info-price'>
           <span>Price: ₹ </span>
           {data.price}
