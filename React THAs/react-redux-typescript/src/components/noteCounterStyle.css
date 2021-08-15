@@ -1,0 +1,61 @@
+.notes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.notes-container.dark {
+  color: white;
+  background-color: black;
+}
+
+.note-input > input {
+  padding: 10px 5px;
+  margin-right: 10px;
+  border-radius: 10px;
+  /* width: 45%; */
+}
+
+.note-input > button {
+  padding: 10px 15px;
+  margin-right: 10px;
+  border-radius: 10px;
+  /* width: 45%; */
+  cursor: pointer;
+  background-color: rgb(110, 110, 172);
+  color: white;
+}
+
+.note-container {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+  margin-top: 20px;
+}
+
+.note-list {
+  width: 60%;
+}
+
+.note-list.dark {
+  color: white;
+  background-color: rgb(34, 32, 32);
+}
+
+.note-list button {
+  padding: 8px;
+  background-color: brown;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 25px;
+}
+
+.todo-text-marked {
+  text-decoration: line-through;
+}
