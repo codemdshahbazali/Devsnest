@@ -1,0 +1,14 @@
+{
+  "name": "day5",
+  "version": "1.0.0",
+  "description": "const fs = require('fs') -> it basically imports all the javascript written inside 'fs' module and puts it into fs variable\r fs is file system. Gives us access to modify/access file system.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^8.2.0"
+  }
+}

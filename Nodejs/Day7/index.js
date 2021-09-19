@@ -1,4 +1,3 @@
-const { response } = require('express');
 const express = require('express');
 const app = express();
 
@@ -9,7 +8,7 @@ const app = express();
 // };
 
 //we can send anything with response.send() like array, object, file, string
-//To be more specific we use res.json() for sending json. res.send is very common hecne to be speciific we send res.json
+//To be more specific we use res.json() for sending json. res.send is very common hence to be speciific we send res.json
 //db update -> 201
 //res.sendStatus(400); -> validation error from client side
 //res.sendStatus(500) -> 500 series -> server side error
@@ -66,4 +65,6 @@ app.get('/user/:userId/books/:bookId', (req, res) => {
 // app.put('/', func);
 // app.delete('/', func);
 
-app.listen(5000);
+app.listen(5000, () => {
+  console.log('Server started at port 5000!!!');
+});
