@@ -5,7 +5,7 @@ reusable function under utils
 middlewares under middleware
 
 We will use sequelize for database connectivity. This is an ORM. This can connect to multiple DB
-https://www.npmjs.com/package//sequelize
+https://www.npmjs.com/package/sequelize
 
 We will hash the password using hashing library (bcrypt - https://www.npmjs.com/package/bcrypt)
 

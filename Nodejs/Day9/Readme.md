@@ -32,9 +32,9 @@ Content-Type: application/json; charset=UTF-8
 Content-Type: image/jpeg
 
 jade is a templating engine for HTML
-jade is renames to pug, there is ejs available too
+jade is renamed to pug, there is ejs available too
 //set the viewing engine path
-app.set('views', path.join(\_\_dirname, 'views'));
+app.set('views', path.join(__dirname, 'views'));
 //sets the viewing engine to jade
 app.set('view engine', 'jade');
 

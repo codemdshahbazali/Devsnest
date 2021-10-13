@@ -33,6 +33,7 @@ app.get(
     res.send('This is magic');
   }
 );
+
 //middleware runs behind the main function to check a particular function
 app.get(
   '/login',
@@ -48,7 +49,8 @@ app.get(
   }
 );
 
-//This will not work without decrypting body using middlewares. For this we use express.urlencoded({ extended: true }) and express.json() for decoding it
+//This will not work without decrypting body using middlewares.
+//For this we use express.urlencoded({ extended: true }) and express.json() for decoding it
 app.use(express.urlencoded({ extended: true })); //handles when we send form data
 app.use(express.json()); //handles when we send json data
 

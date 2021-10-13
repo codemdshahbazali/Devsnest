@@ -1,7 +1,7 @@
 const fs = require('fs') -> it basically imports all the javascript written inside 'fs' module and puts it into fs variable
 fs is file system. Gives us access to modify/access file system.
 
-Normal Js which runs on browser doesn't have access to file system
+Normal Js which runs on the browser doesn't have access to the file system
 
 fs.mkdirSync('Day1'); -> makes a folder synchronously. Use try catch in Sync mode to handle error.
 fs.mkdir('Day1'); -> makes a folder asynchronously. Use try catch or callback function to handle error. If folder already exists then it throws error

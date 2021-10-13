@@ -14,7 +14,7 @@ different kind of url
 handling dynamic values (query params => req.query, (dynamic url) params => req.params)
 
 backend console.log gets printed on console where server is running
-frontend console.log gets printed on broswer console 
+frontend console.log gets printed on broswer console
 
 When we want to send some special character inside the query variable
 encodeURIComponent('something&something') -> 'something%26something'
@@ -26,15 +26,15 @@ next is a callback function which calls the function just after the given functi
 next() doesn't acts like return so if have things after next then the execution will come back to execute that untill it find res.json() or res.send()
 We use middleware in permission, authorization, login or to check if an user is authorized or not using bearer's token
 app.get(
-  '/',
-  (req, res, next) => {
-    console.log(req);
-    console.log(res);
-    next();
-  },
-  (req, res) => {
-    res.json({ message: 'well done!!!' });
-  }
+'/',
+(req, res, next) => {
+console.log(req);
+console.log(res);
+next();
+},
+(req, res) => {
+res.json({ message: 'well done!!!' });
+}
 );
 
 Browsers by default cache's all the get call for a particular url. So for first request we get 200 but after that if we query the same url then browser gives 304 as it picks up from the local cache
@@ -48,15 +48,14 @@ Express can't handle req.body in post directly as it comes in encrypted format. 
 
 For the express to work with post body which is encrypted, we use a middleware called body-parser(npm package).
 
-
 //This handles form data(url encoded)
 app.use(bodyParser.urlencoded({ extended: true }));
 //body -> passowrd: "shahbaz"
 
 //This handles raw json data
 app.use(bodyParser.json());
-//  body -> {
-//     "state": true
+// body -> {
+// "state": true
 // }
 
 https://stackoverflow.com/questions/24330014/bodyparser-is-deprecated-express-4
@@ -68,7 +67,7 @@ const express = require('express');
 
 app.use(express.json());
 app.use(express.urlencoded({
-  extended: true
+extended: true
 }));
 
 // For Express version less than 4.16.0
@@ -77,5 +76,5 @@ const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-  extended: true
+extended: true
 }));

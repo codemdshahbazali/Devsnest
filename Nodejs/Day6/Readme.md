@@ -1,5 +1,5 @@
 Javascript was made for browser. Chrome runs a javascript engine called V8 for running js under browser.
-Async -> heavy tasks are executed in the background like api call and stuff and it is executed back once the task is completed. This makes JS performant and will not make the control wait for long for the task to complete
+Async -> Heavy tasks are executed in the background like api call and stuff and it is executed back once the task is completed. This makes JS performant and will not make the control wait for long for the task to complete
 Event loop -> 
 
 A single-threaded, non-blocking, asynchronous, concurrent
