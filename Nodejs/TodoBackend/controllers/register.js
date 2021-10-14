@@ -37,7 +37,9 @@ const register = async (req, res, next) => {
     //Saving or Updating the changes to the database
     let savedUser = await User.create(user);
 
+    //Passing saved user to main sigup function
     res.locals.savedUser = savedUser;
+
     next();
   } catch (e) {
     return res
