@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 const initialRegisterChecks = require('./../middleware/registerCheck');
+const register = require('./../controllers/register');
 
 /**
  * Registers an user
@@ -13,8 +14,8 @@ const initialRegisterChecks = require('./../middleware/registerCheck');
  *  Step 2 - Sql Injection
  *  Step 3 - Register User
  */
-router.post('/signup', initialRegisterChecks, function (req, res, next) {
-  res.status(201).send(req.body);
+router.post('/signup', initialRegisterChecks, register, function (req, res) {
+  res.status(201).send(res.locals.savedUser);
 });
 
 /**

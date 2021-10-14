@@ -1,0 +1,49 @@
+const bcrypt = require('bcrypt');
+const User = require('./../models/User');
+/**
+ *
+ * @param {*} req
+ * @param {*} res
+ * @param {*} next
+ *
+ * Register User
+ *  - Hash the password
+ *  - Save user to the Database
+ */
+const register = async (req, res, next) => {
+  try {
+    const { fullName, email, password } = req.body;
+
+    //checking for user if they already exist in the database
+    const alreadyExist = await User.findOne({
+      where: { email: email.toLowerCase() },
+    });
+    if (alreadyExist) {
+      return res.status(401).send('Email alraedy exists!!!');
+    }
+
+    //Hashing password using bcrypt
+    const saltRounds = 10;
+    const salt = bcrypt.genSaltSync(saltRounds);
+    const passwordHash = bcrypt.hashSync(password, salt);
+
+    //create a user object with hashed password
+    const user = {
+      fullName,
+      email: email.toLowerCase(),
+      password: passwordHash,
+    };
+
+    //Saving or Updating the changes to the database
+    let savedUser = await User.create(user);
+
+    res.locals.savedUser = savedUser;
+    next();
+  } catch (e) {
+    return res
+      .status(500)
+      .send(`Issue registering the User. Issue Details - ` + e.message);
+  }
+};
+
+module.exports = register;
