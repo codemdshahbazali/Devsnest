@@ -46,7 +46,7 @@ const register = async (req, res, next) => {
   } catch (e) {
     return res
       .status(500)
-      .send(`Issue registering the User. Issue Details - ` + e.message);
+      .send("Issue registering the User. Issue Details - " + e.message);
   }
 };
 

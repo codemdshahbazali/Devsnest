@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const initialRegisterChecks = require('./../middleware/registerCheck');
+const { initialRegisterChecks, loginChecks } = require('../middleware/check');
 const register = require('./../controllers/register');
 const loginController = require('./../controllers/login');
 
@@ -10,7 +10,7 @@ const loginController = require('./../controllers/login');
  *
  * Step 1 - Initial Check
  *   email, password and confirm password -> string
- *   email and password lenght -> 8 char
+ *   email and password length -> 8 char
  *   validate email and passowrd
  *  Step 2 - Sql Injection
  *  Step 3 - Register User
@@ -22,7 +22,7 @@ router.post('/signup', initialRegisterChecks, register, function (req, res) {
 /**
  * Log in an user
  */
-router.post('/login', loginController, function (req, res, next) {
+router.post('/login', loginChecks, loginController, function (req, res, next) {
   res.status(201).send(res.locals.user);
 });
 
