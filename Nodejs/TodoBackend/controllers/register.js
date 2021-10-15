@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const User = require('./../models/User');
+
 /**
  *
  * @param {*} req
@@ -7,6 +8,7 @@ const User = require('./../models/User');
  * @param {*} next
  *
  * Register User
+ *  - Check if user already exist. If so then send back user already exists
  *  - Hash the password
  *  - Save user to the Database
  */

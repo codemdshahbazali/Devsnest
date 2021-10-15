@@ -3,6 +3,7 @@ var router = express.Router();
 
 const initialRegisterChecks = require('./../middleware/registerCheck');
 const register = require('./../controllers/register');
+const loginController = require('./../controllers/login');
 
 /**
  * Registers an user
@@ -21,8 +22,8 @@ router.post('/signup', initialRegisterChecks, register, function (req, res) {
 /**
  * Log in an user
  */
-router.post('/login', function (req, res, next) {
-  res.status(201).send('Login Successful!!!');
+router.post('/login', loginController, function (req, res, next) {
+  res.status(201).send(res.locals.user);
 });
 
 module.exports = router;
