@@ -108,7 +108,7 @@ const deleteTodo = async (req, res, next) => {
     });
 
     if (destroyedRowNumber == 0) {
-      throw new Error("Todo doesn't exists!!!");
+      throw new Error("Todo doesn't exists!");
     }
     next();
   } catch (e) {
