@@ -1,5 +1,6 @@
 const User = require('./../models/User');
 const bcrypt = require('bcrypt');
+var jwt = require('jsonwebtoken');
 
 /**
  *
@@ -28,7 +29,9 @@ const loginController = async (req, res, next) => {
 
     //Verifying password
     if (bcrypt.compareSync(password, user.password)) {
-      res.locals.user = user;
+      //Generating JWT token
+      const token = jwt.sign(user, 'secret', { expiresIn: '1h' });
+      res.locals.token = token;
       next();
     } else {
       return res.status(400).send('Incorrect Password');

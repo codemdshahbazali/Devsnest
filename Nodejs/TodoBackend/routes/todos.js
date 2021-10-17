@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const createTodo = require('./../controllers/todos');
 
 /**
  * Gets all the todos
@@ -11,8 +12,8 @@ router.get('/', function (req, res, next) {
 /**
  * Creates a todo
  */
-router.post('/', function (req, res, next) {
-  res.status(201).send(req.body);
+router.post('/', createTodo, function (req, res, next) {
+  res.status(201).send(res.locals.createdTodo);
 });
 
 /**

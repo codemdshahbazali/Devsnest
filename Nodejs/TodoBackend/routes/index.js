@@ -23,7 +23,7 @@ router.post('/signup', initialRegisterChecks, register, function (req, res) {
  * Log in an user
  */
 router.post('/login', loginChecks, loginController, function (req, res, next) {
-  res.status(201).send(res.locals.user);
+  res.status(201).send({ token: `Bearer ${res.locals.token}` });
 });
 
 module.exports = router;

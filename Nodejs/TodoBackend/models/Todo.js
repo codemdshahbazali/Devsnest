@@ -1,30 +1,40 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require('../database/sequelize');
+const User = require('./User');
 
-const User = sequelize.define(
-  'User',
+const Todo = sequelize.define(
+  'Todos',
   {
     // Model attributes are defined here
-    fullName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    email: {
+    item: {
       type: DataTypes.STRING,
       allowNull: false,
       // allowNull defaults to true
     },
-    password: {
-      type: DataTypes.STRING,
+    isCompleted: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
       allowNull: false,
       // allowNull defaults to true
     },
   },
   {
-    freezeTableName: true,
     // Other model options go here
+    freezeTableName: true,
   }
 );
+
+//Defining associations (forgein key - primary key)
+User.hasMany(Todo, {
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE',
+});
+
+Todo.belongsTo(User, {
+  foreignKey: {
+    allowNull: false,
+  },
+});
 
 (async () => {
   try {
@@ -34,4 +44,4 @@ const User = sequelize.define(
   }
 })();
 
-module.exports = User;
+module.exports = Todo;
