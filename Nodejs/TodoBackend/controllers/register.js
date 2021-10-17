@@ -21,7 +21,7 @@ const register = async (req, res, next) => {
       where: { email: email.toLowerCase() },
     });
     if (alreadyExist) {
-      return res.status(401).send('Email alraedy exists!!!');
+      return res.status(401).send({ error: 'Email alraedy exists!!!' });
     }
 
     //Hashing password using bcrypt
@@ -46,7 +46,7 @@ const register = async (req, res, next) => {
   } catch (e) {
     return res
       .status(500)
-      .send('Issue registering the User. Issue Details - ' + e.message);
+      .send({ error: 'Issue registering the User.', errorDetail: e.message });
   }
 };
 

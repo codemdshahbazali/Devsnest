@@ -8,8 +8,6 @@ const createTodo = async (req, res, next) => {
 
     // verify a token symmetric - synchronous
     var decoded = jwt.verify(token, 'secret');
-    // console.log(decoded.password); // bar
-    console.log(decoded); // bar
 
     const createdTodo = await Todo.create({
       item,
@@ -19,7 +17,33 @@ const createTodo = async (req, res, next) => {
     res.locals.createdTodo = createdTodo;
     next();
   } catch (e) {
-    return res.status(401).send('Something went wrong => ' + e.message);
+    return res.status(401).send({ message: e.message });
+  }
+};
+
+const updateTodo = async (req, res, next) => {
+  try {
+    const { item, isCompleted } = req.body;
+    const token = req.headers['authorization'].split(' ')[1];
+    const todoId = req.params.id;
+
+    // verify a token symmetric - synchronous
+    var decoded = jwt.verify(token, 'secret');
+
+    const updatedTodo = await Todo.update(
+      { item, isCompleted },
+      {
+        where: {
+          id: todoId,
+          UserId: decoded.id,
+        },
+      }
+    );
+
+    res.locals.updatedTodo = updatedTodo;
+    next();
+  } catch (e) {
+    return res.status(401).send({ message: e.message });
   }
 };
 
@@ -29,13 +53,6 @@ const getAllTodos = async (req, res, next) => {
 
     // verify a token symmetric - synchronous
     var decoded = jwt.verify(token, 'secret');
-    // console.log(decoded.password); // bar
-    console.log(decoded); // bar
-
-    // const createdTodo = await Todo.create({
-    //   item,
-    //   UserId: decoded.id,
-    // });
 
     const { count, rows } = await Todo.findAndCountAll({
       where: {
@@ -43,11 +60,66 @@ const getAllTodos = async (req, res, next) => {
       },
     });
 
-    res.locals.allTodos = rows;
+    res.locals.allTodos = { count, todos: rows };
     next();
   } catch (e) {
-    return res.status(401).send('Something went wrong => ' + e.message);
+    return res.status(401).send({ message: e.message });
   }
 };
 
-module.exports = { createTodo, getAllTodos };
+const getSingleTodo = async (req, res, next) => {
+  try {
+    const token = req.headers['authorization'].split(' ')[1];
+    const todoId = req.params.id;
+
+    // verify a token symmetric - synchronous
+    var decoded = jwt.verify(token, 'secret');
+
+    const todo = await Todo.findOne({
+      where: {
+        id: todoId,
+        UserId: decoded.id,
+      },
+    });
+
+    if (todo === null) {
+      throw new Error('Todo Not found!');
+    }
+
+    res.locals.individualTodo = todo;
+    next();
+  } catch (e) {
+    return res.status(401).send({ message: e.message });
+  }
+};
+
+const deleteTodo = async (req, res, next) => {
+  try {
+    const token = req.headers['authorization'].split(' ')[1];
+    const todoId = req.params.id;
+
+    // verify a token symmetric - synchronous
+    var decoded = jwt.verify(token, 'secret');
+    const destroyedRowNumber = await Todo.destroy({
+      where: {
+        id: todoId,
+        UserId: decoded.id,
+      },
+    });
+
+    if (destroyedRowNumber == 0) {
+      throw new Error("Todo doesn't exists!!!");
+    }
+    next();
+  } catch (e) {
+    return res.status(401).send({ message: e.message });
+  }
+};
+
+module.exports = {
+  createTodo,
+  getAllTodos,
+  getSingleTodo,
+  deleteTodo,
+  updateTodo,
+};

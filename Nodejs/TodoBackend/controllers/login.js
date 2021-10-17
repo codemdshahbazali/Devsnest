@@ -30,14 +30,14 @@ const loginController = async (req, res, next) => {
     //Verifying password
     if (bcrypt.compareSync(password, user.password)) {
       //Generating JWT token
-      const token = jwt.sign(user, 'secret', { expiresIn: '1h' });
+      const token = jwt.sign(user, 'secret', { expiresIn: '30s' });
       res.locals.token = token;
       next();
     } else {
-      return res.status(400).send('Incorrect Password');
+      return res.status(400).send({ error: 'Incorrect Password' });
     }
   } catch (e) {
-    return res.status(400).send(e.message);
+    return res.status(400).send({ error: e.message });
   }
 };
 
