@@ -4,9 +4,11 @@ var jwt = require('jsonwebtoken');
 
 /**
  *
- * @param {*} req
- * @param {*} res
- * @param {*} next
+ * @param {Request Object} req
+ * @param {Response Object} res
+ * @param {calls the next function in middleware chain} next
+ * @returns - checks for email in the database. If it exists then matches the password.
+ * If that exists then it generates a JWT token and send it back.
  */
 const loginController = async (req, res, next) => {
   try {
@@ -30,7 +32,7 @@ const loginController = async (req, res, next) => {
     //Verifying password
     if (bcrypt.compareSync(password, user.password)) {
       //Generating JWT token
-      const token = jwt.sign(user, 'secret', { expiresIn: '30s' });
+      const token = jwt.sign(user, 'secret', { expiresIn: '5m' });
       res.locals.token = token;
       next();
     } else {

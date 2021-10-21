@@ -1,6 +1,13 @@
 const Todo = require('./../models/Todo');
 var jwt = require('jsonwebtoken');
 
+/**
+ *
+ * @param {Request Object} req
+ * @param {Response Object} res
+ * @param {calls the next function in middleware chain} next
+ * @returns - creates a todo and returns the created todo on success. Also returns a failure message on failure
+ */
 const createTodo = async (req, res, next) => {
   try {
     const { item } = req.body;
@@ -21,6 +28,13 @@ const createTodo = async (req, res, next) => {
   }
 };
 
+/**
+ *
+ * @param {Request Object} req
+ * @param {Response Object} res
+ * @param {calls the next function in middleware chain} next
+ * @returns - Updates a todo and returns the updated todo on success. Also returns a failure message on failure
+ */
 const updateTodo = async (req, res, next) => {
   try {
     const { item, isCompleted } = req.body;
@@ -30,7 +44,7 @@ const updateTodo = async (req, res, next) => {
     // verify a token symmetric - synchronous
     var decoded = jwt.verify(token, 'secret');
 
-    const updatedTodo = await Todo.update(
+    let updatedTodo = await Todo.update(
       { item, isCompleted },
       {
         where: {
@@ -40,6 +54,21 @@ const updateTodo = async (req, res, next) => {
       }
     );
 
+    if (updatedTodo[0] === 0) {
+      updatedTodo = {
+        message: 'User not found. Update failed !!!',
+      };
+    } else {
+      const todo = await Todo.findOne({
+        where: {
+          id: todoId,
+          UserId: decoded.id,
+        },
+      });
+
+      updatedTodo = todo;
+    }
+
     res.locals.updatedTodo = updatedTodo;
     next();
   } catch (e) {
@@ -47,6 +76,13 @@ const updateTodo = async (req, res, next) => {
   }
 };
 
+/**
+ *
+ * @param {Request Object} req
+ * @param {Response Object} res
+ * @param {calls the next function in middleware chain} next
+ * @returns - returns all the todos on success. Returns a failure message on failure
+ */
 const getAllTodos = async (req, res, next) => {
   try {
     const token = req.headers['authorization'].split(' ')[1];
@@ -67,6 +103,13 @@ const getAllTodos = async (req, res, next) => {
   }
 };
 
+/**
+ *
+ * @param {Request Object} req
+ * @param {Response Object} res
+ * @param {calls the next function in middleware chain} next
+ * @returns - returns a single todo on success based on passed id using params. Returns a failure message on failure
+ */
 const getSingleTodo = async (req, res, next) => {
   try {
     const token = req.headers['authorization'].split(' ')[1];
@@ -93,6 +136,13 @@ const getSingleTodo = async (req, res, next) => {
   }
 };
 
+/**
+ *
+ * @param {Request Object} req
+ * @param {Response Object} res
+ * @param {calls the next function in middleware chain} next
+ * @returns - returns 204 on success based on passed id using params. Returns a failure message on failure
+ */
 const deleteTodo = async (req, res, next) => {
   try {
     const token = req.headers['authorization'].split(' ')[1];

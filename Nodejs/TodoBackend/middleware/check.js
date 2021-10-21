@@ -47,9 +47,8 @@ const initialRegisterChecks = (req, res, next) => {
  * @param {Response Object} res
  * @param {next callback function} next
  *
- * email, password and confirm password -> string
- * email and password lenght -> 8 char
- * validate email and passowrd
+ * Checks for valid email and password type - should be a string
+ * Validates email
  */
 const loginChecks = (req, res, next) => {
   const { email, password } = req.body;
@@ -59,18 +58,14 @@ const loginChecks = (req, res, next) => {
     errorMessage = 'email or password should be string';
   } else {
     if (!emailValidate(email)) {
-      errorMessage = 'Email is not valid';
-    } else {
-      if (!passwordValidate(password)) {
-        errorMessage = 'Password is not strong enough';
-      }
+      errorMessage = 'Not a valid email.';
     }
   }
 
   if (errorMessage == '') {
     next();
   } else {
-    res.status(400).send(errorMessage);
+    res.status(400).send({ errorMessage });
   }
 };
 
