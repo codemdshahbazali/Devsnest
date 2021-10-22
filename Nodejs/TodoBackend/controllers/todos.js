@@ -1,5 +1,6 @@
 const Todo = require('./../models/Todo');
 var jwt = require('jsonwebtoken');
+const config = require('./../config');
 
 /**
  *
@@ -11,10 +12,9 @@ var jwt = require('jsonwebtoken');
 const createTodo = async (req, res, next) => {
   try {
     const { item } = req.body;
-    const token = req.headers['authorization'].split(' ')[1];
 
-    // verify a token symmetric - synchronous
-    var decoded = jwt.verify(token, 'secret');
+    //verifying JWT
+    var decoded = validateJWT(req);
 
     const createdTodo = await Todo.create({
       item,
@@ -38,11 +38,10 @@ const createTodo = async (req, res, next) => {
 const updateTodo = async (req, res, next) => {
   try {
     const { item, isCompleted } = req.body;
-    const token = req.headers['authorization'].split(' ')[1];
     const todoId = req.params.id;
 
-    // verify a token symmetric - synchronous
-    var decoded = jwt.verify(token, 'secret');
+    //verifying JWT
+    var decoded = validateJWT(req);
 
     let updatedTodo = await Todo.update(
       { item, isCompleted },
@@ -85,10 +84,8 @@ const updateTodo = async (req, res, next) => {
  */
 const getAllTodos = async (req, res, next) => {
   try {
-    const token = req.headers['authorization'].split(' ')[1];
-
-    // verify a token symmetric - synchronous
-    var decoded = jwt.verify(token, 'secret');
+    //verifying JWT
+    var decoded = validateJWT(req);
 
     const { count, rows } = await Todo.findAndCountAll({
       where: {
@@ -112,11 +109,9 @@ const getAllTodos = async (req, res, next) => {
  */
 const getSingleTodo = async (req, res, next) => {
   try {
-    const token = req.headers['authorization'].split(' ')[1];
     const todoId = req.params.id;
-
-    // verify a token symmetric - synchronous
-    var decoded = jwt.verify(token, 'secret');
+    //verifying JWT
+    var decoded = validateJWT(req);
 
     const todo = await Todo.findOne({
       where: {
@@ -145,11 +140,10 @@ const getSingleTodo = async (req, res, next) => {
  */
 const deleteTodo = async (req, res, next) => {
   try {
-    const token = req.headers['authorization'].split(' ')[1];
     const todoId = req.params.id;
 
-    // verify a token symmetric - synchronous
-    var decoded = jwt.verify(token, 'secret');
+    //verifying JWT
+    var decoded = validateJWT(req);
     const destroyedRowNumber = await Todo.destroy({
       where: {
         id: todoId,
@@ -164,6 +158,18 @@ const deleteTodo = async (req, res, next) => {
   } catch (e) {
     return res.status(401).send({ message: e.message });
   }
+};
+
+/**
+ * Verifies jwt token and returns decoded token
+ * @param {Request passed from middleware} req
+ * @returns returns decode values
+ */
+const validateJWT = (req) => {
+  const token = req.headers['authorization'].split(' ')[1];
+
+  // verify a token symmetric - synchronous
+  return jwt.verify(token, config.AccessTokenSecret);
 };
 
 module.exports = {

@@ -1,6 +1,7 @@
 const User = require('./../models/User');
 const bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
+const config = require('./../config');
 
 /**
  *
@@ -32,7 +33,13 @@ const loginController = async (req, res, next) => {
     //Verifying password
     if (bcrypt.compareSync(password, user.password)) {
       //Generating JWT token
-      const token = jwt.sign(user, 'secret', { expiresIn: '5m' });
+      const token = jwt.sign(
+        { id: user.id, fullName: user.fullName, email: user.email },
+        config.AccessTokenSecret,
+        {
+          expiresIn: '5m',
+        }
+      );
       res.locals.token = token;
       next();
     } else {
