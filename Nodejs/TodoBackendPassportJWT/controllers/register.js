@@ -1,0 +1,57 @@
+const bcrypt = require('bcrypt');
+const User = require('./../models/User');
+const errorMessages = require('./../constants/errorMessages');
+
+/**
+ *
+ * @param {*} req
+ * @param {*} res
+ * @param {*} next
+ *
+ * Register User
+ *  - Check if user already exist. If so then send back user already exists
+ *  - Hash the password
+ *  - Save user to the Database
+ */
+const register = async (req, res, next) => {
+  try {
+    const { fullName, email, password } = req.body;
+
+    //checking for user if they already exist in the database
+    let user = await User.findOne({
+      where: { email: email.toLowerCase() },
+    });
+    if (user) {
+      return res
+        .status(401)
+        .send({ error: errorMessages.register.EMAIL_EXISTS });
+    }
+
+    //Hashing password using bcrypt
+    const saltRounds = 10;
+    const salt = bcrypt.genSaltSync(saltRounds);
+    const passwordHash = bcrypt.hashSync(password, salt);
+
+    //create a user object with hashed password
+    user = {
+      fullName,
+      email: email.toLowerCase(),
+      password: passwordHash,
+    };
+
+    //Saving or Updating the changes to the database
+    let savedUser = await User.create(user);
+
+    //Passing saved user to main sigup function
+    res.locals.savedUser = savedUser;
+
+    next();
+  } catch (e) {
+    return res.status(500).send({
+      error: errorMessages.register.REGISTER_ISSUE,
+      errorDetail: e.message,
+    });
+  }
+};
+
+module.exports = register;
