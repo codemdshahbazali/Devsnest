@@ -22,7 +22,7 @@ router.post('/signup', initialRegisterChecks, register, function (req, res) {
 /**
  * Logs in an user
  */
-router.post('/login', loginChecks, loginController, function (req, res, next) {
+router.post('/login', loginChecks, loginController, function (req, res) {
   res.status(201).send({ token: res.locals.token });
 });
 

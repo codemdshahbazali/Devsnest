@@ -1,0 +1,1 @@
+npm i express consola jsonwebtoken passport passport-jwt cors dotenv mongoose
