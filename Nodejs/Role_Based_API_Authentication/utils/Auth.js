@@ -56,7 +56,7 @@ const userRegister = async (userDets, role, res) => {
 };
 
 /**
- * @Desc To lpgin user as (ADMIN, SUPER_ADMIN, USER)
+ * @Desc To login user as (ADMIN, SUPER_ADMIN, USER)
  */
 const userLogin = async (userCreds, role, res) => {
   let { username, password } = userCreds;
