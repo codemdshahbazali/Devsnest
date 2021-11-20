@@ -94,7 +94,7 @@ const userLogin = async (userCreds, role, res) => {
       },
       SECRET,
       {
-        expiresIn: '20s',
+        expiresIn: '5m',
       }
     );
 
@@ -103,7 +103,7 @@ const userLogin = async (userCreds, role, res) => {
       role: user.role,
       email: user.email,
       token,
-      expiresIn: '20s',
+      expiresIn: '5 minutes',
     };
 
     return res.status(200).json({
