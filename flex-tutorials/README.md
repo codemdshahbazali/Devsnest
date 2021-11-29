@@ -32,3 +32,27 @@ order property - apply to all the items - helps to change the order of the items
 flex - short cut for flex-grow, flex-shrink and flex-basis
 flex- 1 0 0px
 flex - 1 --- it can be used like this too
+
+CSS Position
+++++++++++++++++++++++
+postions:
+-static(default for all the elements, flows the document flow, can't change the position)
+
+-relative(acts exactly like static positioning(follows the document flow), but allows us to change the position of the element using top, bottom, left and right). When we apply top, bottom, right and left, it takes the element out of the doc flow, relative to where it should be
+We should not use it to change position as it takes element out of the document flow hence making things difficult
+
+-absolute - document ignores the element when we apply absolute to it. It is completely removed from the document flow.
+It aboslutely positions an element with reference to some parent container. If it doesn't find a parent container having position other than static then it positions itself with respect to the html container. We normally use position relative to relatively position element to it. This is not fixed to the position like "fixed".
+
+-fixed - it positions itself relative to html element. It is fixed when we scroll the page.
+-sticky - combination of relative + fixed. Initally it will remain relative, but when we scroll and this element moves to the top then it sticks to the top of the page
+
+CSS display
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+display: block -> takes up the entire width and no other element can come next to it (divs)
+display: inline -> takes up minimum amt of space possible(span). Setting width and height of the element is not possible
+display: inline-block -> takes up minimum amt of space possible but we can set the width and height of the element (img)
+display: none -> completely removes the element from the html visually
+
+display: flex
+display: grid
