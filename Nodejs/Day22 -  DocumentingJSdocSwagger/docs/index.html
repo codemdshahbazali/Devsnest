@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>Todo Backend</h1>
+<p>This project implements all the APIs needed to implement a Todo App</p>
+<h2>API Reference</h2>
+<h4>To login an existing user</h4>
+<pre class="prettyprint source lang-http"><code>  POST /login
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>email</code></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left"><strong>Required</strong>. Regsitered valid Email</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>password</code></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left"><strong>Required</strong>. Current Password</td>
+</tr>
+</tbody>
+</table>
+<h4>To sign up a new user</h4>
+<pre class="prettyprint source lang-http"><code>  POST /signup
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>fullName</code></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left"><strong>Required</strong>. Full Name of the User</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>email</code></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left"><strong>Required</strong>. Valid Email</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>password</code></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left"><strong>Required</strong>. Valid Password</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>confirmPassword</code></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left"><strong>Required</strong>. Re-enter same passowrd</td>
+</tr>
+</tbody>
+</table>
+<h4>List all todos of the current user</h4>
+<pre class="prettyprint source lang-http"><code>  GET /todos
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Header</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>Authorization</code></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left"><strong>Required</strong>. Bearer token</td>
+</tr>
+</tbody>
+</table>
+<h4>Create a new todo item</h4>
+<pre class="prettyprint source lang-http"><code>  POST /todos
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Header</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>Authorization</code></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left"><strong>Required</strong>. Bearer token</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>item</code></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left"><strong>Required</strong>. Detail of the todo item</td>
+</tr>
+</tbody>
+</table>
+<h4>Update an existing todo</h4>
+<pre class="prettyprint source lang-http"><code>  PUT /todos/:id
+
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Header</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>Authorization</code></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left"><strong>Required</strong>. Bearer token</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>id</code></td>
+<td style="text-align:left"><code>number</code></td>
+<td style="text-align:left"><strong>Required</strong>. Id of the item to be updated</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>item</code></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left"><strong>Required</strong>. Detail of the todo item</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>isCompleted</code></td>
+<td style="text-align:left"><code>boolean</code></td>
+<td style="text-align:left"><strong>Required</strong>. Detail of the todo item</td>
+</tr>
+</tbody>
+</table>
+<h4>Delete an existing todo</h4>
+<pre class="prettyprint source lang-http"><code>  DELETE /todos/:id
+
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Header</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>Authorization</code></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left"><strong>Required</strong>. Bearer token</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>id</code></td>
+<td style="text-align:left"><code>number</code></td>
+<td style="text-align:left"><strong>Required</strong>. Id of the item to be deleted</td>
+</tr>
+</tbody>
+</table>
+<h4>Get a single todo</h4>
+<pre class="prettyprint source lang-http"><code>  GET /todos/:id
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Header</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>Authorization</code></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left"><strong>Required</strong>. Bearer token</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>id</code></td>
+<td style="text-align:left"><code>number</code></td>
+<td style="text-align:left"><strong>Required</strong>. Id of the item to be fetched</td>
+</tr>
+</tbody>
+</table>
+<h2>Authors</h2>
+<ul>
+<li><a href="https://github.com/codemdshahbazali">Md Shahbaz Ali</a></li>
+</ul>
+<h2>Badges</h2>
+<p><a href="https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs"><img src="https://img.shields.io/apm/l/atomic-design-ui.svg?" alt="MIT License"></a></p>
+<h2>Deployment</h2>
+<p>To deploy this project run</p>
+<pre class="prettyprint source lang-bash"><code>  npm run deploy
+</code></pre>
+<h2>Environment Variables</h2>
+<p>To run this project, you will need to add the following environment variables to your .env file</p>
+<p><code>API_KEY</code></p>
+<p><code>ANOTHER_API_KEY</code></p>
+<h2>Features</h2>
+<ul>
+<li>Light/dark mode toggle</li>
+<li>Live previews</li>
+<li>Fullscreen mode</li>
+<li>Cross platform</li>
+</ul>
+<h2>Feedback</h2>
+<p>If you have any feedback, please reach out to us at codemdshahbazali@gmail.com</p>
+<h2>🚀 About Me</h2>
+<p>I'm a full stack developer who knows React, Redux and Node.js... Contact me to build an amazing website</p>
+<h1>Hi, I'm Shahbaz! 👋</h1>
+<h2>🔗 Links</h2>
+<p><a href="https://www.linkedin.com/in/md-shahbaz-ali-03238645/"><img src="https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white" alt="linkedin"></a>
+<a href="https://twitter.com/alishahbaz4u"><img src="https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&amp;logo=twitter&amp;logoColor=white" alt="twitter"></a></p>
+<h2>🛠 Skills</h2>
+<p>Javascript, React, Redux, Node.js, HTML, CSS...</p>
+<h2>Installation</h2>
+<p>Install todo backend App with npm</p>
+<pre class="prettyprint source lang-bash"><code>  cd todobackend
+  npm install
+  npm start
+</code></pre>
+<h2>Run Locally</h2>
+<p>Clone the project</p>
+<pre class="prettyprint source lang-bash"><code>  git clone https://link-to-project
+</code></pre>
+<p>Go to the project directory</p>
+<pre class="prettyprint source lang-bash"><code>  cd my-project
+</code></pre>
+<p>Install dependencies</p>
+<pre class="prettyprint source lang-bash"><code>  npm install
+</code></pre>
+<p>Start the server</p>
+<pre class="prettyprint source lang-bash"><code>  npm run start
+</code></pre>
+<h2>Support</h2>
+<p>For support, email codemdshahbazali.com</p>
+<h2>Tech Stack</h2>
+<p><strong>Client:</strong> POSTMAN</p>
+<p><strong>Server:</strong> Node, Express</p>
+<h2>Pagination</h2>
+<p>We should not send all the rows in the database to the client. Instead, we should send a paginated response.</p>
+<p>Reason:
+As querying all the rows inside a database with large data is a very expensive operation. So, we should only send a limited number of rows to the client.</p>
+<p>For this we take three things from a client</p>
+<p>for sql injection safety we should use parameterized queries
+for saving middleman attacks we add https certificates in the server
+Change nornmal database user name, password and port names</p>
+<h2>Logging</h2>
+<p>For tracking unknown error and were it occured in the server, we use logging</p>
+<p>normal console function are displayed inside our machine console, but when we deploy the website, these console might not be available or we might be running server in the background.</p>
+<p>For resolving above issue, we use an npm package called winston. Through winston we can write a file with these consoles or console the issue in some other service</p>
+<p>Debug Levels - Priority decreases as the level value increases.
+const level = {
+error: 0,
+warn: 1,
+info: 2,
+http: 3,
+verbose: 4,
+debug: 5,
+silly: 6,
+};</p>
+<p>If we have deployed in the production then we dont need console logs. By default logger level is set to info.</p>
+<p>We can use process.env to dynamically set logging levels based on enviroment which we are using for deploying the application</p>
+<h2>Alerting</h2>
+<p>Getting logs in slack or discord</p>
+<p>For implementing above we use webhooks</p>
+<p>Montoring tools
+PM2 - this helps in running the application in the background and monitoring the system.errors.
+Sentry.io - Alternate for PM2 (monitoring bugs/system)</p>
+<h2>Documenting JSdoc &amp; Swagger</h2>
+<p>This is very important</p>
+<ul>
+<li>
+<p>3 types of documentation</p>
+<ul>
+<li>developer to developer docs - jsdoc</li>
+<li>consumer documentation - swagger (for frontend)</li>
+<li>user manual</li>
+</ul>
+</li>
+</ul>
+<p>JSDOC
+npm i -D jsdoc
+make jsdoc.json in which we write the configuration of JSDoc
+then we include statement -&gt; &quot;jsdocs&quot;: &quot;./node_modules/.bin/jsdoc -c jsdoc.json&quot; inside script proeprty of package.json</p>
+<p>Swagger
+npm i -D swagger-jsdoc swagger-ui-express</p></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Sat Nov 20 2021 14:15:21 GMT+0530 (India Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
