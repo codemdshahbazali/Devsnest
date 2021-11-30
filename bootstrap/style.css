@@ -1,0 +1,16 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* background-color: blanchedalmond; */
+}
+
+.imgCrousel {
+  object-fit: cover;
+  max-height: 600px;
+}
