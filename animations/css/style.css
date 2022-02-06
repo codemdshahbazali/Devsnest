@@ -1,0 +1,47 @@
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: blueviolet;
+
+  /* animation: anime 10s; */
+  /* animation-name: anime;
+  animation-duration: 5s; */
+  /* animation-delay: 2s; starts 2 seconds late */
+  /* animation-iteration-count: 5; Number of iterations */
+  /* animation-iteration-count: infinte; Number of iterations */
+  /* animation-direction: alternate; */
+  /* ease by default */
+  /* animation-timing-function: linear; steps(60) */
+  /* animation-fill-mode: forwards; stops at the 100% */
+  /* animation-play-state: paused; - plays and stops the animation */
+  animation: anime 5s linear 1s infinite normal forwards;
+}
+
+@keyframes anime {
+  /* 0% {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  50% {
+    width: 200px;
+    height: 200px;
+  }
+
+  100% {
+    border-radius: 1%;
+    background-color: green;
+  } */
+
+  50% {
+    transform: translate(200px, 200px) scale(1.5, 1.5);
+    /* transform: translate(0, 200px); */
+    /* border-radius: 0%; */
+  }
+
+  /* 100% {
+    transform: translate(0, 400px);
+  } */
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/react@17.0.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
+    <script type="text/babel" defer>
+      //https://github.com/facebook/react/blob/48907797294340b6d5d8fecfbcf97edf0691888d/packages/react-dom/src/client/ReactDOMComponent.js#L416
+      //JSX is more intuitive than the raw React API and is easier to understand when reading the code. It’s fairly simple HTML-like syntactic sugar on top of the raw React APIs:
+      //js code
+
+      // const divEle = document.createElement('div');
+      // divEle.className = 'container';
+      // divEle.classList.add('child');
+      // divEle.textContent = 'Hello World';
+      // const rootEle = document.getElementById('root');
+      // rootEle.append(divEle);
+
+      //react code
+
+      const rootElement = document.getElementById('root');
+
+      // const firstChild = React.createElement('span', null, 'Hello');
+      // const secondChild = React.createElement('span', null, ' World!!!');
+
+      // const container = React.createElement(
+      //   'div',
+      //   { className: 'container' },
+      //   firstChild,
+      //   secondChild
+      // );
+      // const container = React.createElement('div', {
+      //   className: 'container',
+      //   children: [firstChild, secondChild],
+      // });
+
+      //jsx
+      // 🐨 re-implement this using JSX!
+      // const element = React.createElement('div', {
+      //   className: 'container',
+      //   children: 'Hello World',
+      // });
+
+      // const elementClone = <div className='container'>Hello World</div>;
+
+      // console.log(element); // no difference between two
+      // console.log(elementClone);
+
+      //interpolate this
+      // const className = 'container';
+      // const children = 'Hello World Shahbaz';
+      // const element = <div className={className}>{children}</div>;
+      // console.log(element);
+
+      //spread props
+      // const children = 'Hello World';
+      // const className = 'container';
+      // const props = { children, className };
+      // const element = <div {...props} />; // how do I apply props to this div?
+      // console.log(element);
+
+      //Custom Components
+      //Components are basically functions which return something that is “renderable”
+      //(more React elements, strings, null, numbers, etc.)
+
+      // const element = (
+      //   <div className='container'>
+      //     <div className='message'>Hello World</div>
+      //     <div className='message'>Goodbye World</div>
+      //   </div>
+      // );
+
+      // function message({ children }) {
+      //   return <div className='message'>{children}</div>;
+      // }
+      // const child1 = message({ children: 'Hello World' });
+      // const child2 = message({ children: 'Goodbye World' });
+
+      // const element = (
+      //   <div className='container'>
+      //     {/*<div className='message'>Hello World</div>*/}
+      //     {child1}
+      //     {/*<div className='message'>Goodbye World</div>*/}
+      //     {child2}
+      //   </div>
+      // );
+      // console.log(child1);
+      // console.log(child2);
+      // console.log(element);
+
+      //using a custom component with React.createElement
+      // const child1 = React.createElement(message, { children: 'Hello World' });
+      // const child2 = message({ children: 'Goodbye World' });
+      // const element = (
+      //   <div className='container'>
+      //     {/*<div className='message'>Hello World</div>*/}
+      //     {child1}
+      //     {/*<div className='message'>Goodbye World</div>*/}
+      //     {child2}
+      //   </div>
+      // );
+
+      // console.log(child1);
+      // console.log(child2);
+      // console.log(element);
+
+      //using a custom component with JSX
+      function Message({ children }) {
+        return <div className='message'>{children}</div>;
+      }
+
+      const child1 = <Message>Hello World</Message>;
+      const element = (
+        <div className='container'>
+          {/*<div className='message'>Hello World</div>*/}
+          {/*React.createElement(message, { children: 'Hello World' })*/}
+          <Message>Hello World</Message>
+          {/*<div className='message'>Goodbye World</div>*/}
+          {React.createElement(Message, { children: 'Goodbye World' })}
+        </div>
+      );
+
+      ReactDOM.render(element, rootElement);
+    </script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
